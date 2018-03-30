@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Calculator:form{% endblock %}
+
+{% block body %}
+    <h1>Calculator</h1>
+
+    <form action="{{ path('calculatorComputation') }}" method="POST">
+        <div>
+            <label for="first_number">First number:</label>
+            <input type="text" id="first_number" name="first_number"/>
+        </div>
+        <br>
+        <div>
+            <label for="last_number">Last number:</label>
+            <input type="text" name="last_number" id="last_number"/>
+        </div>
+        <br>
+        <div>
+            <input type="radio" name="computation" id="add" value="add"/>
+            <label for="add">add</label>
+        </div>
+        <div>
+            <input type="radio" name="computation" id="subtract" value="subtract"/>
+            <label for="subtract">subtract</label>
+        </div>
+        <div>
+            <input type="radio" name="computation" id="multiply" value="multiply"/>
+            <label for="multiply">multiply</label>
+        </div>
+        <div>
+            <input type="radio" name="computation" id="divide" value="divide"/>
+            <label for="divide">divide</label>
+        </div>
+        <br>
+        <input type="submit" value="Calculate"/>
+    </form>
+
+{% endblock %}
